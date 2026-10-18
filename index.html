@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APEX BOXING | Personal Boxing & Fitness Training</title>
+  <meta name="description" content="1-on-1 Personal Boxing Training. Lose weight, burn 800+ calories an hour, or train to compete. Intro sessions $25, regular sessions $50/hr. Results guaranteed." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">🥊</span>
+        <span class="logo-text">APEX<span>BOXING</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#programs">Training Tracks</a>
+        <a href="#why-boxing">Why Boxing</a>
+        <a href="#calculator">Calorie Burn</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#book" class="btn btn-sm btn-primary">Book Intro ($25)</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge-pill">
+          <span class="pulse-dot"></span>
+          <span>1-ON-1 PERSONAL BOXING COACHING</span>
+        </div>
+        <h1>FIGHT FOR YOUR <span class="text-accent">BEST SELF.</span></h1>
+        <p class="hero-sub">
+          Whether you want to torch fat and get in the best shape of your life, or step into the ring and compete—I promise real results and will help you crush your fitness goals.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#book" class="btn btn-primary btn-lg" data-plan="intro">
+            Claim Your $25 Intro Session
+          </a>
+          <a href="#programs" class="btn btn-outline btn-lg">
+            Choose Your Path
+          </a>
+        </div>
+        <div class="hero-QuickStats">
+          <div class="stat-item">
+            <span class="stat-num">800+</span>
+            <span class="stat-label">Calories Burned / Hr</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">$25</span>
+            <span class="stat-label">1-Hour Intro Session</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Results Promised</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-tag">DID YOU KNOW?</div>
+          <div class="flame-badge">🔥 800+ KCAL / HR</div>
+          <h3>Boxing torches more calories than running, cycling, or standard gym workouts.</h3>
+          <p>High-intensity pad work, footwork drills, and core conditioning keep your heart rate in the optimal fat-burning zone while building lean, athletic muscle.</p>
+          <div class="comparison-bars">
+            <div class="bar-row">
+              <div class="bar-label">
+                <span>🥊 Personal Boxing</span>
+                <strong>800+ cal/hr</strong>
+              </div>
+              <div class="bar-track"><div class="bar-fill fill-accent" style="width: 95%"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">
+                <span>🏃 Running (6 mph)</span>
+                <strong>590 cal/hr</strong>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width: 68%"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">
+                <span>🏋️ Traditional Weights</span>
+                <strong>360 cal/hr</strong>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width: 42%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two Training Tracks -->
+  <section class="section" id="programs">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">TWO WAYS TO TRAIN</span>
+        <h2>BUILT FOR YOUR GOALS</h2>
+        <p>Every session is 100% tailored to your starting point, fitness level, and ambition. No experience required.</p>
+      </div>
+
+      <div class="programs-grid">
+        <!-- Track 1: Weight Loss & Fitness -->
+        <div class="program-card">
+          <div class="program-badge">MOST POPULAR</div>
+          <div class="program-icon">⚡</div>
+          <h3>BOX TO GET FIT &amp; LOSE WEIGHT</h3>
+          <p class="program-desc">
+            Ditch the boring treadmill. Use authentic boxing workouts to shed stubborn body fat, build toned muscle, relieve stress, and skyrocket your stamina.
+          </p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span> Burn 800+ calories per 1-hour session</li>
+            <li><span class="check">✓</span> High-energy mitt work &amp; heavy bag intervals</li>
+            <li><span class="check">✓</span> Full-body conditioning &amp; core sculpting</li>
+            <li><span class="check">✓</span> Zero sparring required—100% safe &amp; fun</li>
+            <li><span class="check">✓</span> Accountability &amp; goal tracking every week</li>
+          </ul>
+          <a href="#book" class="btn btn-outline btn-block select-goal-btn" data-goal="Fitness & Weight Loss">
+            Start Fitness &amp; Weight Loss Track
+          </a>
+        </div>
+
+        <!-- Track 2: Competitive Boxing -->
+        <div class="program-card featured-track">
+          <div class="program-badge accent">FIGHTER TRACK</div>
+          <div class="program-icon">🥊</div>
+          <h3>LEARN TO BOX COMPETITIVELY</h3>
+          <p class="program-desc">
+            Want to master the Sweet Science and test yourself in the ring? Learn real ring generalship, crisp technique, defensive IQ, and fight-ready conditioning.
+          </p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span> Stance, footwork, head movement &amp; angles</li>
+            <li><span class="check">✓</span> Advanced pad combinations &amp; counter-punching</li>
+            <li><span class="check">✓</span> Technical sparring preparation &amp; ring IQ</li>
+            <li><span class="check">✓</span> Championship-level stamina &amp; strength drills</li>
+            <li><span class="check">✓</span> Amateur bout preparation &amp; corner coaching</li>
+          </ul>
+          <a href="#book" class="btn btn-primary btn-block select-goal-btn" data-goal="Competitive Boxing">
+            Start Competitive Boxing Track
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Promise Banner + What a 60-Min Session Looks Like -->
+  <section class="section section-alt" id="why-boxing">
+    <div class="container">
+      <div class="promise-banner">
+        <div class="promise-badge">🛡️ MY PERSONAL PROMISE TO YOU</div>
+        <h2>"I PROMISE RESULTS &amp; WILL HELP YOU REACH YOUR FITNESS GOALS."</h2>
+        <p>
+          You bring the effort; I bring the game plan, the coaching, and the relentless support. Whether your goal is dropping 20 pounds or winning your first amateur bout, we map out your milestone targets on Day 1 and hit them together.
+        </p>
+      </div>
+
+      <div class="session-breakdown">
+        <div class="section-header">
+          <span class="eyebrow">INSIDE A 60-MINUTE SESSION</span>
+          <h2>HOW WE TORCH 800+ CALORIES</h2>
+        </div>
+        <div class="timeline-grid">
+          <div class="step-card">
+            <span class="step-time">10 MIN</span>
+            <h4>1. Fighter Warm-Up</h4>
+            <p>Jump rope, dynamic mobility, and shadowboxing to fire up your nervous system and joints.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-time">25 MIN</span>
+            <h4>2. Pad Work &amp; Technique</h4>
+            <p>1-on-1 precision mitt work learning combinations, footwork, defense, and ring mechanics.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-time">15 MIN</span>
+            <h4>3. Heavy Bag &amp; Conditioning</h4>
+            <p>High-output power rounds and metabolic drills that send calorie burn into overdrive.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-time">10 MIN</span>
+            <h4>4. Core &amp; Cooldown</h4>
+            <p>Boxer ab circuits and guided stretching so you leave energized, lean, and injury-free.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Calorie & Goal Calculator -->
+  <section class="section" id="calculator">
+    <div class="container">
+      <div class="calc-wrapper">
+        <div class="calc-info">
+          <span class="eyebrow">SEE YOUR POTENTIAL</span>
+          <h2>800+ CALORIES AN HOUR ADDS UP FAST</h2>
+          <p>
+            Consistency is what transforms your body and sharpens your skills. Slide below to see how many calories you'll torch and how much fat you can burn training together.
+          </p>
+          <div class="calc-controls">
+            <label for="sessionsPerWeek">
+              <span>Sessions Per Week:</span>
+              <strong id="sessionsVal">3 Sessions / week</strong>
+            </label>
+            <input type="range" id="sessionsPerWeek" min="1" max="6" value="3" />
+            <div class="range-marks">
+              <span>1x</span><span>2x</span><span>3x</span><span>4x</span><span>5x</span><span>6x</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <div class="calc-stat-box">
+            <span class="calc-label">Weekly Calorie Burn</span>
+            <span class="calc-value" id="weeklyCalories">2,400+</span>
+            <span class="calc-sub">calories torched every week</span>
+          </div>
+          <div class="calc-stat-box">
+            <span class="calc-label">Monthly Calorie Burn</span>
+            <span class="calc-value text-accent" id="monthlyCalories">9,600+</span>
+            <span class="calc-sub">≈ <strong id="fatPounds">2.7+ lbs</strong> of pure fat burned/mo from sessions alone</span>
+          </div>
+          <div class="calc-stat-box">
+            <span class="calc-label">Weekly Investment</span>
+            <span class="calc-value" id="weeklyCost">$150</span>
+            <span class="calc-sub">at $50 / 1-hour personal session</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple Transparent Pricing -->
+  <section class="section section-alt" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">NO CONTRACTS. NO HIDDEN FEES.</span>
+        <h2>SIMPLE, HONEST PRICING</h2>
+        <p>Start with a half-price Intro Session to experience a full 1-on-1 workout and build your custom roadmap.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Intro Session -->
+        <div class="price-card highlight-card">
+          <div class="price-ribbon">50% OFF FIRST SESSION</div>
+          <h3>INTRO SESSION</h3>
+          <p class="price-subtitle">Perfect for first-timers ready to test the waters</p>
+          <div class="price-tag">
+            <span class="currency">$</span>
+            <span class="amount">25</span>
+            <span class="period">/ 1st Hour</span>
+          </div>
+          <ul class="feature-list">
+            <li><span class="check">✓</span> Full 60-minute 1-on-1 boxing workout</li>
+            <li><span class="check">✓</span> Fitness &amp; movement assessment</li>
+            <li><span class="check">✓</span> Custom Weight Loss or Competitive roadmap</li>
+            <li><span class="check">✓</span> Hand wraps &amp; loaner gloves provided</li>
+          </ul>
+          <a href="#book" class="btn btn-primary btn-block select-plan-btn" data-plan="Intro Session ($25)">
+            Book $25 Intro Session
+          </a>
+        </div>
+
+        <!-- Standard Session -->
+        <div class="price-card">
+          <div class="price-ribbon secondary">PAY AS YOU GO</div>
+          <h3>1-ON-1 PERSONAL SESSION</h3>
+          <p class="price-subtitle">Dedicated coaching focused 100% on your progress</p>
+          <div class="price-tag">
+            <span class="currency">$</span>
+            <span class="amount">50</span>
+            <span class="period">/ Hour</span>
+          </div>
+          <ul class="feature-list">
+            <li><span class="check">✓</span> 60-minute personalized training session</li>
+            <li><span class="check">✓</span> Burn 800+ calories per session</li>
+            <li><span class="check">✓</span> Pad work, bag drills, defense &amp; conditioning</li>
+            <li><span class="check">✓</span> Flexible scheduling &amp; progress tracking</li>
+          </ul>
+          <a href="#book" class="btn btn-outline btn-block select-plan-btn" data-plan="Standard Session ($50/hr)">
+            Book $50/hr Session
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking / Contact Section -->
+  <section class="section" id="book">
+    <div class="container">
+      <div class="booking-container">
+        <div class="booking-copy">
+          <span class="eyebrow">STEP INTO THE RING</span>
+          <h2>CLAIM YOUR <span class="text-accent">$25 INTRO</span> SESSION TODAY</h2>
+          <p>
+            Fill out the quick form and I'll reach out within 24 hours to lock in your time slot. Whether you've never thrown a punch or you're getting ready to compete, let's get to work.
+          </p>
+          <div class="booking-perks">
+            <div class="perk">
+              <span class="perk-icon">🥊</span>
+              <div>
+                <strong>All Fitness Levels Welcome</strong>
+                <p>Complete beginners to experienced athletes.</p>
+              </div>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">🔥</span>
+              <div>
+                <strong>800+ Calorie Burn</strong>
+                <p>High-energy, stress-melting 60-minute workouts.</p>
+              </div>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">🏆</span>
+              <div>
+                <strong>Results Guaranteed</strong>
+                <p>Committed coaching to help you hit your target weight or fight goals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-form-card">
+          <form id="bookingForm">
+            <h3>Reserve Your Spot</h3>
+            <div class="form-group">
+              <label for="clientName">Full Name *</label>
+              <input type="text" id="clientName" name="name" placeholder="e.g. Alex Rivera" required />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="clientPhone">Phone Number *</label>
+                <input type="tel" id="clientPhone" name="phone" placeholder="(555) 234-5678" required />
+              </div>
+              <div class="form-group">
+                <label for="clientEmail">Email Address *</label>
+                <input type="email" id="clientEmail" name="email" placeholder="alex@example.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="sessionType">Session Type</label>
+                <select id="sessionType" name="sessionType">
+                  <option value="Intro Session ($25)">Intro Session — $25 (1 Hour)</option>
+                  <option value="Standard Session ($50/hr)">Standard Session — $50 / Hour</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="trainingGoal">Primary Goal</label>
+                <select id="trainingGoal" name="goal">
+                  <option value="Fitness & Weight Loss">Lose Weight &amp; Get Into Shape</option>
+                  <option value="Competitive Boxing">Learn to Box Competitively</option>
+                  <option value="Both Fitness & Competition">Both Fitness &amp; Competition</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="clientMessage">Anything I should know about your goals or schedule?</label>
+              <textarea id="clientMessage" name="message" rows="3" placeholder="Tell me about your fitness goals, experience level, or preferred days/times..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg">
+              Request My Session →
+            </button>
+            <p class="form-note">🔒 No upfront payment required. Pay at your session.</p>
+          </form>
+
+          <div id="bookingSuccess" class="booking-success" hidden>
+            <div class="success-icon">🥊</div>
+            <h3>YOU'RE ON THE ROSTER!</h3>
+            <p id="successSummary"></p>
+            <button type="button" class="btn btn-outline" id="resetFormBtn">Book Another Session</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-icon">🥊</span>
+          <span class="logo-text">APEX<span>BOXING</span></span>
+        </a>
+        <p>Personal Boxing Training • Weight Loss &amp; Competitive Coaching</p>
+      </div>
+      <div class="footer-rates">
+        <span><strong>Intro Session:</strong> $25 / hr</span>
+        <span class="dot">•</span>
+        <span><strong>Regular Sessions:</strong> $50 / hr</span>
+        <span class="dot">•</span>
+        <span><strong>Calorie Burn:</strong> 800+ / hr</span>
+      </div>
+      <p class="copyright">&copy; <span id="year"></span> Apex Personal Boxing Training. Results Promised.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
