@@ -74,19 +74,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Booking Form Submission
+  // Booking Form Submission (with Netlify Forms AJAX support)
   const bookingForm = document.getElementById('bookingForm');
   const bookingSuccess = document.getElementById('bookingSuccess');
   const successSummary = document.getElementById('successSummary');
   const resetFormBtn = document.getElementById('resetFormBtn');
 
   if (bookingForm) {
-    bookingForm.addEventListener('submit', (e) => {
+    bookingForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      const submitBtn = bookingForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+      }
 
       const name = document.getElementById('clientName').value.trim();
       const sessionType = sessionTypeSelect ? sessionTypeSelect.value : 'Intro Session ($25)';
       const goal = trainingGoalSelect ? trainingGoalSelect.value : 'Fitness & Weight Loss';
+
+      try {
+        const formData = new FormData(bookingForm);
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString(),
+        });
+      } catch (err) {
+        // Fallback gracefully if viewed locally or outside Netlify
+        console.warn('Form submission notice:', err);
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+      }
 
       if (successSummary) {
         successSummary.textContent = `Thanks, ${name}! Your request for the ${sessionType} focused on "${goal}" has been received. Get ready to burn 800+ calories an hour—I'll reach out shortly to confirm your time slot.`;
