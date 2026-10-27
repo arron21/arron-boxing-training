@@ -858,6 +858,71 @@ input[type="range"] {
   color: var(--text-muted);
 }
 
+.direct-contact-card {
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.direct-contact-title {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.direct-contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.85rem 1.15rem;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.contact-item:hover {
+  border-color: var(--accent);
+  background: rgba(239, 68, 68, 0.08);
+  transform: translateX(4px);
+}
+
+.contact-icon {
+  font-size: 1.35rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+
+.contact-item strong {
+  font-size: 1.02rem;
+  color: #ffffff;
+}
+
 .booking-form-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -969,7 +1034,26 @@ textarea:focus {
   color: #d4d4d8;
 }
 
-.footer-rates .dot {
+.footer-rates .dot,
+.footer-contact .dot {
+  color: var(--accent);
+}
+
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+}
+
+.footer-contact a {
+  color: #e4e4e7;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-contact a:hover {
   color: var(--accent);
 }
 
