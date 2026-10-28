@@ -52,27 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCalculator();
   }
 
-  // Netlify Analytics & Conversion Event Tracking
-  // Netlify built-in Analytics tracks all server-side requests in your Netlify dashboard.
-  // Sending lightweight background beacons for key conversion actions lets them show up
-  // in your Netlify Analytics "Top pages / resources" report (e.g. /events/booking-submitted).
-  function trackEvent(eventSlug, params = {}) {
+  // Google Analytics 4 (GA4) Conversion Event Tracking
+  function trackEvent(eventName, params = {}) {
     try {
-      const query = new URLSearchParams(params).toString();
-      const path = `/events/${eventSlug}${query ? `?${query}` : ''}`;
-
-      // Ping Netlify server logs so the event appears in Netlify Built-in Analytics
-      fetch(path, { method: 'HEAD', keepalive: true }).catch(() => {});
-
-      // Also forward to window.gtag / window.plausible if ever added via Netlify Snippet Injection
       if (typeof window.gtag === 'function') {
-        window.gtag('event', eventSlug.replace(/-/g, '_'), params);
-      }
-      if (typeof window.plausible === 'function') {
-        window.plausible(eventSlug, { props: params });
+        window.gtag('event', eventName.replace(/-/g, '_'), params);
       }
     } catch (_) {
-      // Ignore tracking errors
+      // Ignore tracking errors if blocked by browser extensions
     }
   }
 
