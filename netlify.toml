@@ -1,0 +1,8 @@
+# Netlify Configuration & Built-in Analytics Routing
+
+# Map virtual analytics event beacons to 200 OK so they appear cleanly in
+# Netlify Built-in Analytics -> "Top pages" instead of "Top not found"
+[[redirects]]
+  from = "/events/*"
+  to = "/index.html"
+  status = 200

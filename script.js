@@ -52,6 +52,30 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCalculator();
   }
 
+  // Netlify Analytics & Conversion Event Tracking
+  // Netlify built-in Analytics tracks all server-side requests in your Netlify dashboard.
+  // Sending lightweight background beacons for key conversion actions lets them show up
+  // in your Netlify Analytics "Top pages / resources" report (e.g. /events/booking-submitted).
+  function trackEvent(eventSlug, params = {}) {
+    try {
+      const query = new URLSearchParams(params).toString();
+      const path = `/events/${eventSlug}${query ? `?${query}` : ''}`;
+
+      // Ping Netlify server logs so the event appears in Netlify Built-in Analytics
+      fetch(path, { method: 'HEAD', keepalive: true }).catch(() => {});
+
+      // Also forward to window.gtag / window.plausible if ever added via Netlify Snippet Injection
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', eventSlug.replace(/-/g, '_'), params);
+      }
+      if (typeof window.plausible === 'function') {
+        window.plausible(eventSlug, { props: params });
+      }
+    } catch (_) {
+      // Ignore tracking errors
+    }
+  }
+
   // Pre-fill Booking Form when clicking track or pricing buttons
   const sessionTypeSelect = document.getElementById('sessionType');
   const trainingGoalSelect = document.getElementById('trainingGoal');
@@ -62,15 +86,34 @@ document.addEventListener('DOMContentLoaded', () => {
       if (goal && trainingGoalSelect) {
         trainingGoalSelect.value = goal;
       }
+      trackEvent('select-track', { track: goal || 'unknown' });
     });
   });
 
-  document.querySelectorAll('.select-plan-btn').forEach((btn) => {
+  document.querySelectorAll('.select-plan-btn, [data-plan]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const plan = btn.getAttribute('data-plan');
       if (plan && sessionTypeSelect) {
-        sessionTypeSelect.value = plan;
+        if (plan === 'intro') {
+          sessionTypeSelect.value = 'Intro Session ($25)';
+        } else {
+          sessionTypeSelect.value = plan;
+        }
       }
+      trackEvent('select-plan', { plan: plan || 'intro' });
+    });
+  });
+
+  // Track phone call and email link clicks
+  document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      trackEvent('click-phone', { number: '9493066039' });
+    });
+  });
+
+  document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      trackEvent('click-email', { email: 'arronmccrory@gmail.com' });
     });
   });
 
@@ -102,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(formData).toString(),
         });
+        trackEvent('booking-submitted', { session: sessionType, goal });
       } catch (err) {
         // Fallback gracefully if viewed locally or outside Netlify
         console.warn('Form submission notice:', err);
